@@ -17,7 +17,8 @@
     <div id="left-col">
         <div id="form-container">
             <form>
-                <input type="text" name="city" placeholder="What city are you going to?">
+                <input type="text" name="city" placeholder="Where are you going? i.e. St. Louis">
+                <button id="get-city" class="button">Let's Go!</button>
             </form>
         </div>
         <div id="weather-container">
@@ -25,9 +26,16 @@
                 <!-- put five day forecast there-->
             </div>
         </div>
-        <div id="google-container">
-            <div id="place-search"></div>
-            <div id="map"></div>
+        <div id="poi-search-container">
+            <div id="poi-form-container">
+            <form>
+            <input id="poi-input" type="text" name="poi" placeholder="What are you looking for? i.e. hotel, restaurant"></input>
+            <button id="poi-submit" class="button">Find options!</button>
+            </form>
+        </div>
+            <div id="poi-list-container">
+                
+            </div>
         </div>
         <div id="right-col">
             <h2 id="title">Your Tourish Itinerary</h2>
