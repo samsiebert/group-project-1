@@ -1,0 +1,10 @@
+:root { 
+    --primary-color: azure;
+    --secondary-color: #4c6085;
+    --tertiary-color: #5b8266;
+}
+
+.body {
+    background-color: var(--primary-color);
+}
+
