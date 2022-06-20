@@ -18,31 +18,54 @@
     <header>
         <h1>Tourish</h1>
     </header>
-    <div id="left-col">
-        <div id="form-container">
-            <form>
-                <input type="text" name="city" placeholder="What city are you going to?">
-            </form>
-        </div>
-        <div id="weather-container">
-            <div id="five-day-container">
-                <!-- put five day forecast there-->
+    <main>
+        <div id="left-col">
+            <div id="form-container">
+                <form>
+                    <input type="text" name="city" placeholder="What city are you going to?">
+                </form>
+            </div>
+            <div id="weather-container">
+                <div id="five-day-container">
+                    <!-- put five day forecast there-->
+                </div>
+            </div>
+            <div id="google-container">
+                <div id="place-search">
+
+                </div>
+                <div id="map"></div>
             </div>
         </div>
-        <div id="google-container">
-            <div id="place-search">
+        <!--put to do list here -->
+        <div id="right-col">
+            <div id="checklist-container">
+                <h2 id="title">Your Tourish Itinerary</h2>
+                <button id="create-toDo" data-toggle="modal" data-target="#toDo-form-modal">Make Plans?</button>
+                <ul id="todotext-container">
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!--modal is here -->
+    <div class="modal" id="todo-form-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="myModalTitle">Enter what you would like to do or where you would like to
+                        go.</h3>
+                </div>
+                <div class="modal-text">
+                <textarea id="modalTaskDescription" rows=""></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="button" data-dimiss="modal">Cancel</button>
+                <button type="button">Save Plan</button>
+            </div>
 
             </div>
-            <div id="map"></div>
         </div>
-    </div>
-    <div id="right-col">
-        <div id="checklist-container">
-        <h2 id="title">Your Tourish Itinerary</h2>
-        <button id="create-toDo" data-toggle="modal" data-target="#toDo-form-modal">Make Plans?</button>
-        <ul id="todotext-container">
-        </ul>
-        </div>
+
     </div>
 
 

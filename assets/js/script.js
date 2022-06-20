@@ -11,14 +11,19 @@ var createToDo = function (toDoText, toDoList) {
     $("#todolist-container" + toDoList).append(toDoLi);
 
 };
+//get the list from local storage
 var loadTodo = function () {
     toDo = JSON.parse(localStorage.getitem("toDo"));
-    if (!tasks) {
-        tasks = {
+    if (!toDo) {
+        toDo = {
             toDo: []
         };
     }
-}
+};
+//save to local storage
+var saveToDo = function () {
+    localStorage.setItem("todo", JSON.stringify(toDo));
+};
 //enable the sorting of the to do list tasks
 $(".right-col .todolist-container").sortable({
     connectWith: $(".right-col .todolist-container"),
@@ -32,18 +37,24 @@ $(".right-col .todolist-container").sortable({
                 var tempArr = [];
                 //loop over the children
                 $(this)
-                .children()
-                .each(function(){
-                    //save the value of the text in an array
-                    tempArr.push({
-                        text:$(this)
-                        .find("p")
-                        .text()
-                        .trim()
+                    .children()
+                    .each(function () {
+                        //save the value of the text in an array
+                        tempArr.push({
+                            text: $(this)
+                                .find("p")
+                                .text()
+                                .trim()
+                        });
                     });
-                });
 
+                var arrName = $(this)
+                    .attr("id");
 
+                todo[arrName] = tempArr
+                saveToDo();
             }
     }
 })
+//modal was clicked
+$("#todo-form-modal")
