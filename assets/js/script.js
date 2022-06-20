@@ -1,28 +1,35 @@
-var toDo = {}
+var todo = {}
 //create a todo for tourish
-var createToDo = function (toDoText, toDoList) {
-    var toDoLi = $("<li>").addClass("todolist-container-item");
-    var toDoP = $("<p>")
-        .text(toDoText)
+var createtodo = function (todoText, todoList) {
+    var todoLi = $("<li>").addClass("todolist-container-item");
+    var todoP = $("<p>")
+        .text(todoText)
     //Now add the p to the list parent
-    toDoLi.append(toDoP);
+    todoLi.append(todoP);
 
     //now append to the ul on the html
-    $("#todolist-container" + toDoList).append(toDoLi);
+    $("#todolist-container" + todoList).append(todoLi);
 
 };
 //get the list from local storage
-var loadTodo = function () {
-    toDo = JSON.parse(localStorage.getitem("toDo"));
-    if (!toDo) {
-        toDo = {
-            toDo: []
+var loadtodo = function () {
+    todo = JSON.parse(localStorage.getitem("todo"));
+    if (!todo) {
+        todo = {
+            todo: []
         };
     }
 };
+// loop over object properties
+$.each(todo, function (list, arr) {
+    //then loop over sub array
+    arr.forEach(function (todo) {
+        createtodo(todo.text, list);
+    });
+})
 //save to local storage
-var saveToDo = function () {
-    localStorage.setItem("todo", JSON.stringify(toDo));
+var savetodo = function () {
+    localStorage.setItem("todo", JSON.stringify(todo));
 };
 //enable the sorting of the to do list tasks
 $(".right-col .todolist-container").sortable({
@@ -52,9 +59,22 @@ $(".right-col .todolist-container").sortable({
                     .attr("id");
 
                 todo[arrName] = tempArr
-                saveToDo();
+                savetodo();
             }
     }
 })
-//modal was clicked
-$("#todo-form-modal")
+//modal was clicked have to figure out how to do it wihtout bootstrap
+$("#todo-form-modal").modal()(function () {
+    //clear values
+    $("#modaltodoDescription").val("")
+});
+$("#todo-form-modal .save-button").click(function () {
+    //get the value of the text form
+    var todoText = $("modaltodoDescription").val();
+
+    if (todoText, "todo") {
+        createtodo(todoText, "todo");
+
+        //close modal
+    }
+})
