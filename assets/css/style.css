@@ -4,7 +4,21 @@
     --tertiary-color: #5b8266;
 }
 
-.body {
+body {
     background-color: var(--primary-color);
 }
+
+header {
+    font-size: 65px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+h2 {
+   font-size: 30px;
+}
+
+
+
 
