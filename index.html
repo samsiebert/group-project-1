@@ -36,7 +36,7 @@
     <!-- HERO -->
 
     <div class="columns">
-        <div id="left-col" class="column is-one-third-tablet">
+        <div id="left-col" class="column is-half">
             <div id="weather-container" class="">
                 <div id="five-day-container">
                     <!-- put five day forecast there-->
@@ -88,7 +88,7 @@
         </div>
 
 
-        <div id="right-col" class="column">
+        <div id="right-col" class="column is-half">
 
             <div id="checklist-container" class="section">
                 <h2 id="title">Your Tourish Itinerary</h2>
@@ -102,19 +102,23 @@
 
         <!--modal is here -->
         <div class="modal" id="todo-form-modal">
-
-            <div class="modal-header">
-                <h3 class="modal-title" id="myModalTitle">Enter what you would like to do or where you would like to
-                    go.</h3>
+            <div class="modal-background"></div>
+            <div class="modal-content">
+                <div class="modal-header field">
+                    <h3 class="modal-title" id="myModalTitle">Enter what you would like to do or where </br> you would like to
+                        go.</h3>
+                </div>
+                <div class="modal-text field">
+                    <label class="label" for="modalToDo"></label>
+                    <textarea class="text-area" id="modalTaskDescription" rows=""></textarea>
+                </div>
+            
+                <div class="modal-footer">
+                    <button class="button" type="button" href="#" rel="modal:close">Cancel</button>
+                    <button class="button" type="button" class="save-button">Save Plan</button>
+                </div>
             </div>
-            <div class="modal-text">
-                <label for="modalToDo"></label>
-                <textarea id="modalTaskDescription" rows=""></textarea>
-            </div>
-            <div class="modal-footer">
-                <button class="button" type="button" href="#" rel="modal:close">Cancel</button>
-                <button class="button" type="button" class="save-button">Save Plan</button>
-            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
         </div>
         <!-- end modal -->
 

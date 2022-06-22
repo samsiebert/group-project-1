@@ -4,9 +4,24 @@
     --color-three: #799496;
     --color-four: #C97064;
 }
+header {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    padding: 5px 5px 5px 20px;
+    font-weight: bolder;
+    color: var(--color-four);
+    background-color: var(--color-two);
+    z-index: 9999;
+}
+
+h1 {
+    font-family: 'Staatliches';
+    font-size: 65px;
+}
 
 body {
-    background-color: var(--color-one);
+    background-color: var(--color-two);
     margin: 0;
     padding: 0;
     min-height: 100vh;
@@ -14,21 +29,23 @@ body {
     font-family: 'Anek Malayalam';
 }
 
-header {
-    padding: 10px 10px 10px 20px;
-    font-weight: bolder;
-    color: var(--color-four);
-    background-color: var(--color-two);
-}
-
-h1 {
-    font-family: 'Staatliches';
-    font-size: 75px;
-}
-
 h2 {
-   font-size: 30px;
+    font-size: 30px;
+    font-family: 'Staatliches';
+}
 
+h3 {
+    font-size: 25px;
+    font-family: 'Staatliches';
+    color: var(--color-one);
+}
+
+li {
+    color: var(--color-two);
+    background-color: var(--color-two);
+    border-radius: 5px;
+    border: solid 3px;
+    border-color: var(--color-three);
 }
 
 .hero {
@@ -42,7 +59,45 @@ h2 {
 .columns {
     background-color: var(--color-four);
     padding: 10px;
+    min-height: 100vh;
 }
+
+
+
+#poi-list-container {
+    column-count: 2;
+    min-height: 460px;
+    max-height: 460px;
+    width: 100%;
+    margin: 15px 10px 10px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--color-one);
+    
+}
+
+#poi-list-container p {
+    font-size: 18px;
+    color: var(--color-two);
+    padding: 11px;
+    font-family: 'Staatliches';
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#todoText-Container {
+    background-color: var(--color-one);
+    color: var(--color-one);
+    width: 100%;
+    margin: 15px 10px 10px 5px;
+    min-height: 500px;
+    border-radius: 5px;
+}
+
+
 
 
 

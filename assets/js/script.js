@@ -1,6 +1,6 @@
 
-let lat = "38.63";
-let lon = "-90.20";
+let lat = "";
+let lon = "";
 let poiInput = "";
 var poiInputEl = document.getElementById("poi-input");
 var poiSearchBtn = document.getElementById("poi-submit");
@@ -9,6 +9,9 @@ var apiUrl = "";
 
 var poiFormHandler = function() {
     event.preventDefault();
+
+    lat = localStorage.getItem("lat");
+    lon = localStorage.getItem("lon");
 
     //collect desired point of interest category from poi form input element
     poiInput = poiInputEl.value.trim();
@@ -43,23 +46,43 @@ var getPois = function(apiUrl) {
         });
 };
 
+//prints list of desires pois to screen
 var printPois = function(poi) {
-
+    //reset poi list before printing next results
     poiListContainerEl.innerHTML = "";
-    
+
+    console.log(poi);
+    //runs through poi data returned from api and creates p elements to store each returned location
     for (var i = 0; i < poi.length; i++) {
         var poiListItemEl = document.createElement("p");
         poiListItemEl.classList.add("list-item");
-        poiListItemEl.textContent = poi[i].name;
+
+        poiListItemEl.innerHTML = poi[i].display_name;
+                     
 
         poiListContainerEl.appendChild(poiListItemEl);
       
     }
 };
 
+var geocode = function(city) {
+
+    var geocodeUrl = "http://api.openweathermap.org/geo/1.0/direct?q=" + city + "&limit=1&appid=a74391bcfbdf1e9827d65a7e2e76f024"
+    fetch(geocodeUrl).then(function(response) {
+        response.json().then(function(data) {
+            lat = data[0].lat;
+            lon= data[0].lon;
+            localStorage.setItem("lat",JSON.stringify(lat));
+            localStorage.setItem("lon",JSON.stringify(lon));
+        })
+    });
+};
+
 
 poiSearchBtn.addEventListener("click", poiFormHandler);
 
+
+//WEATHER FUNCTION CODE STARTS 
 var cities = [];
 
 var cityFormEl=document.querySelector("#city-search-form");
@@ -77,6 +100,7 @@ var formSumbitHandler = function(event){
         cityInputEl.value = "";
     } 
     saveSearch();
+    geocode(city);
     // pastSearch(city);
 }
 
@@ -155,6 +179,10 @@ var display5Day = function(weather){
     }
 
 }
+
+
+
+// TO-DO LIST CODE START
 var todo = {}
 //create a todo for tourish
 var createtodo = function (todoText, todoList) {
@@ -189,7 +217,7 @@ var savetodo = function () {
     localStorage.setItem("todo", JSON.stringify(todo));
 };
 
-//enable the sorting of the to do list tasks
+// enable the sorting of the to do list tasks
 // $("#todoText-Container").sortable({
 //     connectWith: $(".right-col .todolist-container"),
 //     scroll: false,
@@ -221,11 +249,11 @@ var savetodo = function () {
 //             }
 //     }
 // })
-//modal was clicked have to figure out how to do it wihtout bootstrap
+// modal was clicked have to figure out how to do it wihtout bootstrap
 // $("#todo-form-modal").modal()(function () {
 //     //clear values
 //     $("#modaltodoDescription").val("")
-//});
+// });
 // $("#todo-form-modal .save-button").click(function () {
 //     //get the value of the text form
 //     var todoText = $("modaltodoDescription").val();
