@@ -27,7 +27,7 @@ var getPois = function(apiUrl) {
             if(response.ok) {
                 response.json().then(function(data) {
                     var poi = data;
-
+                    console.log(poi);
                     //send data to function that prints to screen
                     printPois(poi);
                 })
@@ -50,8 +50,11 @@ var printPois = function(poi) {
         var poiListItemEl = document.createElement("p");
         poiListItemEl.classList.add("list-item");
         poiListItemEl.textContent = poi[i].name;
+
         poiListContainerEl.appendChild(poiListItemEl);
+      
     }
 };
+
 
 poiSearchBtn.addEventListener("click", poiFormHandler);
