@@ -23,9 +23,16 @@
                 <input type="text" name="city" placeholder="What city are you going to?">
             </form>
         </div>
-        <div id="weather-container">
-            <div id="five-day-container">
-                <!-- put five day forecast there-->
+            <div class = "weather-column">
+                <form class = "cities" id = "city-search-form">
+                    <h4>Search for a City</h2>
+                    <input id="city" type = "text" autofocus = "true" class = "form-input"/>
+                    <button class = "btn-primary" type = "submit">Search</button>
+                </form>            
+                <div id = "five-day-forecast">
+                        <h2 class= "forecast-cards" id = "forecast"></h2>
+                        <div id = "fiveday-container"></div>
+                </div>  
             </div>
         </div>
         <div id="google-container">
@@ -45,9 +52,9 @@
 
 
     </div>
-
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- used to parse and display dates -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
