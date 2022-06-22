@@ -77,7 +77,7 @@ var formSumbitHandler = function(event){
         cityInputEl.value = "";
     } 
     saveSearch();
-    pastSearch(city);
+    // pastSearch(city);
 }
 
 var saveSearch = function(){
@@ -91,7 +91,7 @@ var getCityWeather = function(city){
     fetch(apiURL)
     .then(function(response){
         response.json().then(function(data){
-            displayWeather(data, city);
+            // displayWeather(data, city);
         });
     });
 };
