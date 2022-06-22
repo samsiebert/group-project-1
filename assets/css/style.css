@@ -1,25 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * { 
-    --primary-color: azure;
-    --secondary-color: #4c6085;
-    --tertiary-color: #5b8266;
-};
+    --color-one: #FAF3DD;
+    --color-two: #171D1C;
+    --color-three: #799496;
+    --color-four: #C97064;
+}
 
 body {
-    background-color: var(--primary-color);
-    font-family: "Regular 400", sans-serif;
-    
+    background-color: var(--color-one);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--color-two);
+    font-family: 'Anek Malayalam';
 }
 
 header {
-    font-size: 65px;
-    margin: 10px;
-    padding: 10px;
+    padding: 10px 10px 10px 20px;
     font-weight: bolder;
+    color: var(--color-four);
+    background-color: var(--color-two);
+}
+
+h1 {
+    font-family: 'Staatliches';
+    font-size: 75px;
 }
 
 h2 {
    font-size: 30px;
+
+}
+
+.hero {
+    background-image: url("../images/hero.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--color-one);
+}
+
+.columns {
+    background-color: var(--color-four);
+    padding: 10px;
 }
 
 

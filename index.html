@@ -8,8 +8,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anek Malayalam">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Staatliches">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
 
@@ -22,11 +22,11 @@
     </header>
 
     <!-- HERO -->
-    <div class="weather-column field hero is-medium">
+    <div class="weather-column field hero">
         <form class="cities hero-body center" id="city-search-form">
             <h4>Search for a City</h2>
                 <input class="input title " id="city" type="text" autofocus="true" class="form-input" />
-                <button class="btn-primary button title" type="submit">Search</button>
+                <button class= "btn button title" type="submit">Search</button>
         </form>
         <div id="five-day-forecast">
             <h2 class="forecast-cards" id="forecast"></h2>
@@ -45,7 +45,7 @@
             <div id="poi-container">
                 <div id="poi-search-container" class="">
 
-                    <div class="field">
+                    <div class="field section">
                         <!-- section heading-->
                         <h2>What are you looking for?</h2>
 
@@ -75,22 +75,24 @@
                         <button class="button" id="poi-submit" class="button">
                             Find options!
                         </button>
+                        
+                        <div id="poi-list-container">
+
+                        </div>
                     </div>
 
 
                 </div>
-                <div id="poi-list-container">
-
-                </div>
+               
             </div>
         </div>
 
 
         <div id="right-col" class="column">
 
-            <div id="checklist-container">
+            <div id="checklist-container" class="section">
                 <h2 id="title">Your Tourish Itinerary</h2>
-                <button href="#todo-form-modal" rel="modal:open" id="create-toDo" data-target="#toDo-form-modal">Make
+                <button class="button" href="#todo-form-modal" rel="modal:open" id="create-toDo" data-target="#toDo-form-modal">Make
                     Plans?</button>
                 <ul id="todoText-Container">
                 </ul>
@@ -110,8 +112,8 @@
                 <textarea id="modalTaskDescription" rows=""></textarea>
             </div>
             <div class="modal-footer">
-                <button type="button" href="#" rel="modal:close">Cancel</button>
-                <button type="button" class="save-button">Save Plan</button>
+                <button class="button" type="button" href="#" rel="modal:close">Cancel</button>
+                <button class="button" type="button" class="save-button">Save Plan</button>
             </div>
         </div>
         <!-- end modal -->
