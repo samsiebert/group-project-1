@@ -1,4 +1,4 @@
-# Group Project #1 - TOURISH
+# Group Project #1 - TOURᐧISH
 ![screenshot of Tourish webpage](/assets/images/screenshot.png)
 
 ## Purpose
