@@ -3,7 +3,7 @@
 
 ## Purpose
 1st group project for Washington University Coding BootCamp
-Refactored company's webpage to meet accessibility standards
+App that helps fetch and organize information about an intended destination chosen by the user.
 
 ## Built With
 * HTML
