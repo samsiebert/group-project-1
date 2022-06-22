@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
@@ -19,39 +20,89 @@
     <header>
         <h1>Tourish</h1>
     </header>
-    <main>
-        <div id="left-col">
-            <div id="form-container">
-                <form>
-                    <input type="text" name="city" placeholder="What city are you going to?">
-                </form>
-            </div>
-            <div id="weather-container">
+
+    <!-- HERO -->
+
+
+    <div class="weather-column field hero is-medium">
+        <form class="cities hero-body center" id="city-search-form">
+            <h4>Search for a City</h2>
+                <input class="input title " id="city" type="text" autofocus="true" class="form-input" />
+                <button class="btn-primary button title" type="submit">Search</button>
+        </form>
+        <div id="five-day-forecast">
+            <h2 class="forecast-cards" id="forecast"></h2>
+            <div id="fiveday-container"></div>
+        </div>
+    </div>
+
+
+    <!-- HERO -->
+    <div class="columns">
+        <div id="left-col" class="column is-one-third-tablet">
+            <div id="weather-container" class="">
                 <div id="five-day-container">
                     <!-- put five day forecast there-->
                 </div>
             </div>
-            <div id="google-container">
-                <div id="place-search">
+            <div id="poi-container">
+                <div id="poi-search-container" class="">
+
+                    <div class="field">
+                        <!-- section heading-->
+                        <h2>What are you looking for?</h2>
+
+                        <!-- drop-down menu -->
+                        <div class="control">
+                            <div class="select">
+                                <select id="poi-input">
+                                    <option>Select dropdown</option>
+                                    <option>restaurant</option>
+                                    <option>fuel</option>
+                                    <option>park</option>
+                                    <option>stadium</option>
+                                    <option>parking</option>
+                                    <option>airport</option>
+                                    <option>hotel</option>
+                                    <option>pub</option>
+                                    <option>cinema</option>
+                                    <option>railway_station</option>
+                                    <option>bus_station</option>
+                                    <option>supermarket</option>
+                                    <option>gym</option>
+                                    <option>atm</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button class="button" id="poi-submit" class="button">
+                            Find options!
+                        </button>
+                    </div>
+
 
                 </div>
-                <div id="map"></div>
+                <div id="poi-list-container">
+
+                </div>
             </div>
         </div>
-        <!--put to do list here -->
-        <div id="right-col">
+
+
+        <div id="right-col" class="column">
+
             <div id="checklist-container">
                 <h2 id="title">Your Tourish Itinerary</h2>
                 <button href="#todo-form-modal" rel="modal:open" id="create-toDo" data-target="#toDo-form-modal">Make
                     Plans?</button>
-                <ul id="todotext-container">
+                <ul id="todoText-Container">
                 </ul>
             </div>
         </div>
-    </main>
-    <!--modal is here -->
-    <div class="modal" id="todo-form-modal">
-        
+        </main>
+        <!--modal is here -->
+        <div class="modal" id="todo-form-modal">
+
             <div class="modal-header">
                 <h3 class="modal-title" id="myModalTitle">Enter what you would like to do or where you would like to
                     go.</h3>
@@ -61,17 +112,27 @@
                 <textarea id="modalTaskDescription" rows=""></textarea>
             </div>
             <div class="modal-footer">
-            <button type="button" href="#" rel="modal:close">Cancel</button>
+                <button type="button" href="#" rel="modal:close">Cancel</button>
                 <button type="button" class="save-button">Save Plan</button>
             </div>
 
-        
 
+
+
+        </div>
 
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"
+        integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- used to parse and display dates -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.3/moment.min.js"></script>
+
     <script src="./assets/js/script.js"></script>
 </body>
 

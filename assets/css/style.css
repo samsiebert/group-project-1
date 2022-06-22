@@ -11,3 +11,17 @@ body {
     
 }
 
+header {
+    font-size: 65px;
+    margin: 10px;
+    padding: 10px;
+    font-weight: bolder;
+}
+
+h2 {
+   font-size: 30px;
+}
+
+
+
+
