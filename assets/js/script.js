@@ -1,5 +1,4 @@
 
-
 let lat = "38.63";
 let lon = "-90.20";
 let poiInput = "";
@@ -92,7 +91,7 @@ var getCityWeather = function(city){
     fetch(apiURL)
     .then(function(response){
         response.json().then(function(data){
-            // displayWeather(data, city);
+            
         });
     });
 };
@@ -189,6 +188,7 @@ $.each(todo, function (list, arr) {
 var savetodo = function () {
     localStorage.setItem("todo", JSON.stringify(todo));
 };
+
 //enable the sorting of the to do list tasks
 // $("#todoText-Container").sortable({
 //     connectWith: $(".right-col .todolist-container"),
