@@ -1,11 +1,14 @@
-:root { 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+* { 
     --primary-color: azure;
     --secondary-color: #4c6085;
     --tertiary-color: #5b8266;
-}
+};
 
 body {
     background-color: var(--primary-color);
+    font-family: "Regular 400", sans-serif;
+    
 }
 
 header {
