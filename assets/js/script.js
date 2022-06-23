@@ -1,3 +1,5 @@
+ var test = $("right-col");
+ console.log(test)
 
 let lat = "";
 let lon = "";
@@ -209,6 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       $trigger.addEventListener('click', () => {
         openModal($target);
+        
       });
     });
   
@@ -257,14 +260,36 @@ var loadtodo = function () {
 // loop over object properties
 $.each(todo, function (list, arr) {
     //then loop over sub array
-    arr.forEach(function (todo) {
+    arr.forEach(function () {
+        var todo = localStorage.getItem("tasks");
+        console.log(todo);
         createtodo(todo.text, list);
     });
 })
 //save to local storage
 var savetodo = function () {
-    localStorage.setItem("todo", JSON.stringify(todo));
+    let storageValues = [];
+    const valueToPush = $("#modalTaskDescription").val();
+
+    console.log("Val = ", valueToPush);
+    storageValues =  [...storageValues, valueToPush];
+    localStorage.setItem("todo", JSON.stringify(test));
+    // if(!!localStorage.getItem("todo")) {
+    //     console.log("in if", localStorage.getItem("todo"))
+    //     var localStorageArr = [localStorage.getItem("todo")];
+    // } else {
+    //     console.log("setting it empty");
+    //     var localStorageArr = [];
+    // }
+    // var newLocal = localStorageArr.push($("#modalTaskDescription").val());
+    // console.log(newLocal, $("#modalTaskDescription").val())
+    
+    // localStorage.setItem("todo", newLocal);
+  
+
 };
+
+$("#displayPlan").on("click", savetodo);
 
 // enable the sorting of the to do list tasks
 // $("#todoText-Container").sortable({
@@ -333,9 +358,10 @@ $.each(todo, function (list, arr) {
     });
 })
 //save to local storage
-var savetodo = function () {
-    localStorage.setItem("todo", JSON.stringify(todo));
-};
+// var savetodo = function () {
+//     console.log("at likne 356 ", todo);
+//     localStorage.setItem("todo", JSON.stringify(todo));
+// };
 
 
 //enable the sorting of the to do list tasks
