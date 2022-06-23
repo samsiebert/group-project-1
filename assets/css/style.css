@@ -42,10 +42,10 @@ h3 {
 
 li {
     color: var(--color-two);
-    background-color: var(--color-two);
+    background-color: var(--color-three);
     border-radius: 5px;
     border: solid 3px;
-    border-color: var(--color-three);
+    border-color: var(--color-two);
 }
 
 .hero {
@@ -60,6 +60,7 @@ li {
     background-color: var(--color-four);
     padding: 10px;
     min-height: 100vh;
+    border-top: solid var(--color-three) 5px;
 }
 
 
