@@ -1,10 +1,140 @@
-:root { 
-    --primary-color: azure;
-    --secondary-color: #4c6085;
-    --tertiary-color: #5b8266;
+* { 
+    --color-one: #FAF3DD;
+    --color-two: #171D1C;
+    --color-three: #799496;
+    --color-four: #C97064;
+}
+header {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    padding: 5px 5px 5px 20px;
+    font-weight: bolder;
+    color: var(--color-four);
+    background-color: var(--color-two);
+    z-index: 9999;
 }
 
-.body {
-    background-color: var(--primary-color);
+h1 {
+    font-family: 'Staatliches';
+    font-size: 65px;
 }
+
+body {
+    background-color: var(--color-four);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--color-two);
+    font-family: 'Anek Malayalam';
+}
+
+h2 {
+    font-size: 30px;
+    font-family: 'Staatliches';
+}
+
+h3 {
+    font-size: 25px;
+    font-family: 'Staatliches';
+    color: var(--color-one);
+}
+
+/* li {
+    /* color: var(--color-two);
+    background-color: var(--color-three);
+    border-radius: 5px;
+    border: solid 3px;
+    border-color: var(--color-two);
+} */
+
+textarea {
+    background-color: var(--color-one);
+    border-color: var(--color-three);
+    font-size: 23px;
+    font-family: 'Staatliches';
+    color: var(--color-two);
+}
+
+.hero {
+    background-image: url("../images/hero.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: var(--color-one);
+}
+
+.columns {
+    background-color: var(--color-four);
+    padding: 10px;
+    min-height: 100vh;
+    /* border-top: solid var(--color-three) 5px; */
+}
+
+.plans {
+    height: 75px;
+    width: 100%;
+    padding: 7px;
+}
+
+.card {
+    height: 200px;
+    width: 125px;
+    background-color: var(--color-two);
+    color: var(--color-one);
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#fiveday-container {
+    display: flex;
+    justify-content: center;
+    align-content: space-around center;
+}
+
+#forecast {
+    text-align: center;
+}
+
+#poi-list-container {
+    column-count: 2;
+    min-height: 460px;
+    max-height: 460px;
+    width: 100%;
+    margin: 15px 10px 10px 5px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background-color: var(--color-one);
+    
+}
+
+#poi-list-container p {
+    font-size: 23px;
+    color: var(--color-two);
+    padding: 11px;
+    font-family: 'Staatliches';
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#todoText-Container {
+    background-color: var(--color-one);
+    color: var(--color-one);
+    width: 100%;
+    margin: 15px 10px 10px 5px;
+    min-height: 500px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
 
