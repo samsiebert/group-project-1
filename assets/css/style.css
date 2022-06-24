@@ -109,6 +109,7 @@ textarea {
     flex-direction: column;
     flex-wrap: wrap;
     background-color: var(--color-one);
+    column-count: 2;
     
 }
 
